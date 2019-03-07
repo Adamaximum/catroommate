@@ -561,6 +561,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4ec8349323201446b4ae6cd4f760da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cycler: {fileID: 1161559149}
+  catSprites:
+  - {fileID: 21300000, guid: 24e34a7c52baeae469db5fd49a670f11, type: 3}
+  - {fileID: 21300002, guid: 24e34a7c52baeae469db5fd49a670f11, type: 3}
+  - {fileID: 21300004, guid: 24e34a7c52baeae469db5fd49a670f11, type: 3}
+  - {fileID: 21300006, guid: 24e34a7c52baeae469db5fd49a670f11, type: 3}
+  - {fileID: 21300008, guid: 24e34a7c52baeae469db5fd49a670f11, type: 3}
+  - {fileID: 21300010, guid: 24e34a7c52baeae469db5fd49a670f11, type: 3}
+  - {fileID: 21300012, guid: 24e34a7c52baeae469db5fd49a670f11, type: 3}
+  - {fileID: 21300014, guid: 24e34a7c52baeae469db5fd49a670f11, type: 3}
+  - {fileID: 21300016, guid: 24e34a7c52baeae469db5fd49a670f11, type: 3}
+  - {fileID: 21300018, guid: 24e34a7c52baeae469db5fd49a670f11, type: 3}
+  - {fileID: 21300020, guid: 24e34a7c52baeae469db5fd49a670f11, type: 3}
+  - {fileID: 21300022, guid: 24e34a7c52baeae469db5fd49a670f11, type: 3}
   _selectState: 0
   _questionsList:
   - '"I have a fully furnished 2 bedroom & I just need a roommate!          Just a
@@ -843,8 +857,9 @@ GameObject:
   - component: {fileID: 1161559148}
   - component: {fileID: 1161559147}
   - component: {fileID: 1161559146}
+  - component: {fileID: 1161559149}
   m_Layer: 0
-  m_Name: emoji_cat_0
+  m_Name: EmojiCat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -858,7 +873,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161559145}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d5644e95afda29b4d82869e680a10c62, type: 2}
   m_CullingMode: 0
@@ -906,7 +921,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 24e34a7c52baeae469db5fd49a670f11, type: 3}
+  m_Sprite: {fileID: 21300022, guid: 24e34a7c52baeae469db5fd49a670f11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -931,6 +946,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1161559149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161559145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e376ce296333314f8f6964d56161275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gm: {fileID: 0}
+  sr: {fileID: 0}
+  test: {fileID: 0}
+  _frameNum: 0
 --- !u!1 &1308726139
 GameObject:
   m_ObjectHideFlags: 0

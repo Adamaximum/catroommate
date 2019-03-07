@@ -7,6 +7,10 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public SpriteCycler cycler;
+
+    public Sprite[] catSprites;
+
     public bool _selectState = false; //False = Left, True = Right
 
     public string[] _questionsList;
@@ -27,6 +31,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cycler = GameObject.Find("EmojiCat").GetComponent<SpriteCycler>();
+
         questionAsked = GameObject.Find("Question").GetComponent<TextMeshProUGUI>();
         responseLeft = GameObject.Find("Response 1").GetComponent<TextMeshProUGUI>();
         responseRight = GameObject.Find("Response 2").GetComponent<TextMeshProUGUI>();
@@ -79,12 +85,16 @@ public class GameManager : MonoBehaviour
                 questionAsked.text = "Let's be roommates!";
                 responseLeft.text = "";
                 responseRight.text = "";
+
+                cycler.sr.sprite = catSprites[1];
             }
             else if (_catPoints < 0) //Lose
             {
                 questionAsked.text = "I can't live with you...";
                 responseLeft.text = "";
                 responseRight.text = "";
+
+                cycler.sr.sprite = catSprites[7];
             }
         }
         
@@ -156,6 +166,8 @@ public class GameManager : MonoBehaviour
             {
                 _catPoints++;
                 Debug.Log("Right Answer, SelectState= " + _selectState + ", Question= " + _question);
+
+                cycler.sr.sprite = catSprites[3];
             }
             else if (_selectState == true) //Okay... (Bad)
             {
@@ -173,11 +185,15 @@ public class GameManager : MonoBehaviour
             {
                 _catPoints++;
                 Debug.Log("Right Answer, SelectState= " + _selectState + ", Question= " + _question);
+
+                cycler.sr.sprite = catSprites[2];
             }
             else if (_selectState == true) //Early Riser (Bad)
             {
                 _catPoints--;
                 Debug.Log("Wrong Answer, SelectState= " + _selectState + ", Question= " + _question);
+
+                cycler.sr.sprite = catSprites[0];
             }
         }
         else if (_question == 2)
@@ -190,11 +206,15 @@ public class GameManager : MonoBehaviour
             {
                 _catPoints--;
                 Debug.Log("Wrong Answer, SelectState= " + _selectState + ", Question= " + _question);
+
+                cycler.sr.sprite = catSprites[8];
             }
             else if (_selectState == true) //Anchovies (Good)
             {
                 _catPoints++;
                 Debug.Log("Right Answer, SelectState= " + _selectState + ", Question= " + _question);
+
+                cycler.sr.sprite = catSprites[2];
             }
         }
         else if (_question == 3)
@@ -207,11 +227,15 @@ public class GameManager : MonoBehaviour
             {
                 _catPoints--;
                 Debug.Log("Wrong Answer, SelectState= " + _selectState + ", Question= " + _question);
+
+                cycler.sr.sprite = catSprites[9];
             }
             else if (_selectState == true) //Nope (Good)
             {
                 _catPoints++;
                 Debug.Log("Right Answer, SelectState= " + _selectState + ", Question= " + _question);
+
+                cycler.sr.sprite = catSprites[5];
             }
         }
         else if (_question == 4)
@@ -224,11 +248,15 @@ public class GameManager : MonoBehaviour
             {
                 _catPoints++;
                 Debug.Log("Right Answer, SelectState= " + _selectState + ", Question= " + _question);
+
+                cycler.sr.sprite = catSprites[11];
             }
             else if (_selectState == true) //Hate 'em (Bad)
             {
                 _catPoints--;
                 Debug.Log("Wrong Answer, SelectState= " + _selectState + ", Question= " + _question);
+
+                cycler.sr.sprite = catSprites[2];
             }
         }
         else if (_question == 5)
@@ -241,11 +269,15 @@ public class GameManager : MonoBehaviour
             {
                 _catPoints++;
                 Debug.Log("Right Answer, SelectState= " + _selectState + ", Question= " + _question);
+
+                cycler.sr.sprite = catSprites[4];
             }
             else if (_selectState == true) //Not rly (Bad)
             {
                 _catPoints--;
                 Debug.Log("Wrong Answer, SelectState= " + _selectState + ", Question= " + _question);
+
+                cycler.sr.sprite = catSprites[10];
             }
         }
         else if (_question == 6)
