@@ -561,8 +561,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4ec8349323201446b4ae6cd4f760da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectState: 0
-  question: 0
+  _selectState: 0
+  _questionsList:
+  - '"I have a fully furnished 2 bedroom & I just need a roommate! Just a few questions
+    tho..."'
+  - '"Are you a night owl or \nan early riser?"'
+  - '"What do you like on yr pizza?"'
+  - '"Are you allergic to cats?"'
+  - '"How do you feel about naps?"'
+  - '"Don''t you hate birds?"'
+  - '"Can I have some belly rubs?"'
+  - '"Let''s be roommates!"'
+  - '"I can''t live with you..."'
+  _leftAnswerList:
+  - Great!
+  - Night Owl
+  - Veggies
+  - A little
+  - Love 'em
+  - The most
+  - YEP
+  - 
+  _rightAnswerList:
+  - Okay...
+  - Early Riser
+  - Anchovies
+  - Nope
+  - Hate 'em
+  - Not rly
+  - IDK
+  - 
+  _question: 0
+  _catPoints: 0
   questionAsked: {fileID: 0}
   responseLeft: {fileID: 0}
   responseRight: {fileID: 0}

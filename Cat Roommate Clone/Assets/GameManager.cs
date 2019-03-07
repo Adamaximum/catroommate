@@ -7,10 +7,18 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public bool selectState = false; //False = Left, True = Right
-    public int question;
+    public bool _selectState = false; //False = Left, True = Right
 
-    public int catPoints = 0;
+    public string[] _questionsList;
+    public string[] _leftAnswerList;
+    public string[] _rightAnswerList;
+
+    public int _question;
+
+    public int _catPoints;
+
+    //public float timer = 1;
+    //public bool pressOK;
 
     public TextMeshProUGUI questionAsked;
     public TextMeshProUGUI responseLeft;
@@ -30,16 +38,16 @@ public class GameManager : MonoBehaviour
         
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            selectState = false;
+            _selectState = false;
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            selectState = true;
+            _selectState = true;
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            question++;
             QuestionAdvance();
+            //pressOK = false;
         }
         if (Input.GetKey(KeyCode.R))
         {
@@ -49,124 +57,222 @@ public class GameManager : MonoBehaviour
         {
             Application.Quit();
         }
+
+        //if(pressOK == false)
+        //{
+        //    timer -= Time.deltaTime;
+        //    if(timer <= 0)
+        //    {
+        //        pressOK = true;
+        //        timer = 1;
+        //    }
+        //}
+        
+            ChangeText();
+
+        if(_question == 7)
+        {
+            if (_catPoints > 0) //Win
+            {
+                _question = 7;
+            }
+            else if (_catPoints < 0) //Lose
+            {
+                _question = 8;
+            }
+        }
+        
+
+        //if (_question == 1)
+        //{
+        //    changeText();
+        //}
+        //else if (_question == 2)
+        //{
+        //    questionAsked.text = "What do you like on yr pizza?";
+        //    responseLeft.text = "Veggies";
+        //    responseRight.text = "Anchovies";
+        //}
+        //else if (_question == 3)
+        //{
+        //    questionAsked.text = "Are you allergic to cats?";
+        //    responseLeft.text = "A little";
+        //    responseRight.text = "Nope";
+        //}
+        //else if (_question == 4)
+        //{
+        //    questionAsked.text = "How do you feel about naps?";
+        //    responseLeft.text = "Love 'em";
+        //    responseRight.text = "Hate 'em";
+        //}
+        //else if (_question == 5)
+        //{
+        //    questionAsked.text = "Don't you hate birds?";
+        //    responseLeft.text = "The most";
+        //    responseRight.text = "Not rly";
+        //}
+        //else if (_question == 6)
+        //{
+        //    questionAsked.text = "Can I have some belly rubs?";
+        //    responseLeft.text = "YEP";
+        //    responseRight.text = "IDK";
+        //}
+        //else if (_question == 7)
+        //{
+        //    responseLeft.text = "";
+        //    responseRight.text = "";
+
+        //    if (_catPoints > 0) //Win
+        //    {
+        //        questionAsked.text = "Let's be roommates!";
+        //    }
+        //    else if (_catPoints < 0) //Lose
+        //    {
+        //        questionAsked.text = "I can't live with you...";
+        //    }
+        //}
+
+    }
+
+    void ChangeText()
+    {
+        questionAsked.text = _questionsList[_question];
+        responseLeft.text = _leftAnswerList[_question];
+        responseRight.text = _rightAnswerList[_question];
     }
 
     void QuestionAdvance()
     {
-        if (question == 0)
-        {
-            if(selectState == false) //Great! (Good)
-            {
-                catPoints++;
-            }
-            else if (selectState == true) //Okay... (Bad)
-            {
-                catPoints--;
-            }
-        }
-        else if (question == 1)
-        {
-            questionAsked.text = "Are you a night owl or \nan early riser?";
-            responseLeft.text = "Night Owl";
-            responseRight.text = "Early Riser";
 
-            if (selectState == false) //Night Owl (Bad)
-            {
-                catPoints--;
-            }
-            else if (selectState == true) //Early Riser (Good)
-            {
-                catPoints++;
-            }
-        }
-        else if (question == 2)
+        if (_question == 0)
         {
-            questionAsked.text = "What do you like on yr pizza?";
-            responseLeft.text = "Veggies";
-            responseRight.text = "Anchovies";
-
-            if (selectState == false) //Veggies (Bad)
+            if(_selectState == false) //Great! (Good)
             {
-                catPoints--;
+                _catPoints++;
+                Debug.Log("Right Answer, SelectState= " + _selectState + ", Question= " + _question);
             }
-            else if (selectState == true) //Anchovies (Good)
+            else if (_selectState == true) //Okay... (Bad)
             {
-                catPoints++;
+                _catPoints--;
+                Debug.Log("Wrong Answer, SelectState= " + _selectState + ", Question= " + _question);
             }
         }
-        else if (question == 3)
+        else if (_question == 1)
         {
-            questionAsked.text = "Are you allergic to cats?";
-            responseLeft.text = "A little";
-            responseRight.text = "Nope";
+            //questionAsked.text = "Are you a night owl or \nan early riser?";
+            //responseLeft.text = "Night Owl";
+            //responseRight.text = "Early Riser";
 
-            if (selectState == false) //A little (Bad)
+            if (_selectState == false) //Night Owl (Good)
             {
-                catPoints--;
+                _catPoints++;
+                Debug.Log("Right Answer, SelectState= " + _selectState + ", Question= " + _question);
             }
-            else if (selectState == true) //Nope (Good)
+            else if (_selectState == true) //Early Riser (Bad)
             {
-                catPoints++;
+                _catPoints--;
+                Debug.Log("Wrong Answer, SelectState= " + _selectState + ", Question= " + _question);
             }
         }
-        else if (question == 4)
+        else if (_question == 2)
         {
-            questionAsked.text = "How do you feel about naps?";
-            responseLeft.text = "Love 'em";
-            responseRight.text = "Hate 'em";
+            //questionAsked.text = "What do you like on yr pizza?";
+            //responseLeft.text = "Veggies";
+            //responseRight.text = "Anchovies";
 
-            if (selectState == false) //Love 'em (Good)
+            if (_selectState == false) //Veggies (Bad)
             {
-                catPoints++;
+                _catPoints--;
+                Debug.Log("Wrong Answer, SelectState= " + _selectState + ", Question= " + _question);
             }
-            else if (selectState == true) //Hate 'em (Bad)
+            else if (_selectState == true) //Anchovies (Good)
             {
-                catPoints--;
+                _catPoints++;
+                Debug.Log("Right Answer, SelectState= " + _selectState + ", Question= " + _question);
             }
         }
-        else if (question == 5)
+        else if (_question == 3)
         {
-            questionAsked.text = "Don't you hate birds?";
-            responseLeft.text = "The most";
-            responseRight.text = "Not rly";
+            //questionAsked.text = "Are you allergic to cats?";
+            //responseLeft.text = "A little";
+            //responseRight.text = "Nope";
 
-            if (selectState == false) //The most (Good)
+            if (_selectState == false) //A little (Bad)
             {
-                catPoints++;
+                _catPoints--;
+                Debug.Log("Wrong Answer, SelectState= " + _selectState + ", Question= " + _question);
             }
-            else if (selectState == true) //Not rly (Bad)
+            else if (_selectState == true) //Nope (Good)
             {
-                catPoints--;
+                _catPoints++;
+                Debug.Log("Right Answer, SelectState= " + _selectState + ", Question= " + _question);
             }
         }
-        else if (question == 6)
+        else if (_question == 4)
         {
-            questionAsked.text = "Can I have some belly rubs?";
-            responseLeft.text = "YEP";
-            responseRight.text = "IDK";
+            //questionAsked.text = "How do you feel about naps?";
+            //responseLeft.text = "Love 'em";
+            //responseRight.text = "Hate 'em";
 
-            if (selectState == false) //YEP (Good)
+            if (_selectState == false) //Love 'em (Good)
             {
-                catPoints++;
+                _catPoints++;
+                Debug.Log("Right Answer, SelectState= " + _selectState + ", Question= " + _question);
             }
-            else if (selectState == true) //IDK (Bad)
+            else if (_selectState == true) //Hate 'em (Bad)
             {
-                catPoints--;
+                _catPoints--;
+                Debug.Log("Wrong Answer, SelectState= " + _selectState + ", Question= " + _question);
             }
         }
-        else if (question == 7)
+        else if (_question == 5)
         {
-            responseLeft.text = "";
-            responseRight.text = "";
+            //questionAsked.text = "Don't you hate birds?";
+            //responseLeft.text = "The most";
+            //responseRight.text = "Not rly";
 
-            if (catPoints > 0) //Win
+            if (_selectState == false) //The most (Good)
             {
-                questionAsked.text = "Let's be roommates!";
+                _catPoints++;
+                Debug.Log("Right Answer, SelectState= " + _selectState + ", Question= " + _question);
             }
-            else if (catPoints < 0) //Lose
+            else if (_selectState == true) //Not rly (Bad)
             {
-                questionAsked.text = "I can't live with you...";
+                _catPoints--;
+                Debug.Log("Wrong Answer, SelectState= " + _selectState + ", Question= " + _question);
             }
         }
+        else if (_question == 6)
+        {
+            //questionAsked.text = "Can I have some belly rubs?";
+            //responseLeft.text = "YEP";
+            //responseRight.text = "IDK";
+
+            if (_selectState == false) //YEP (Good)
+            {
+                _catPoints++;
+                Debug.Log("Right Answer, SelectState= " + _selectState + ", Question= " + _question);
+            }
+            else if (_selectState == true) //IDK (Bad)
+            {
+                _catPoints--;
+                Debug.Log("Wrong Answer, SelectState= " + _selectState + ", Question= " + _question);
+            }
+        }
+        //else if (_question == 7)
+        //{
+        //    responseLeft.text = "";
+        //    responseRight.text = "";
+
+        //    if (_catPoints > 0) //Win
+        //    {
+        //        questionAsked.text = "Let's be roommates!";
+        //    }
+        //    else if (_catPoints < 0) //Lose
+        //    {
+        //        questionAsked.text = "I can't live with you...";
+        //    }
+        //}
+        _question++;
     }
 }

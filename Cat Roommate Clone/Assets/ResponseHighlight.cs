@@ -20,9 +20,9 @@ public class ResponseHighlight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gm.selectState == false) //Left
+        if (gm._selectState == false) //Left
         {
-            Debug.Log("Left Response");
+            //Debug.Log("Left Response");
             if (gameObject.name == "Response 1")
             {
                 response.color = new Color32(0, 0, 0, 255);
@@ -33,9 +33,9 @@ public class ResponseHighlight : MonoBehaviour
             }
         }
 
-        if (gm.selectState == true) //Right
+        if (gm._selectState == true) //Right
         {
-            Debug.Log("Right Response");
+            //Debug.Log("Right Response");
             if (gameObject.name == "Response 1")
             {
                 response.color = new Color32(128, 128, 128, 255);
