@@ -25,11 +25,11 @@ public class ResponseHighlight : MonoBehaviour
             //Debug.Log("Left Response");
             if (gameObject.name == "Response 1")
             {
-                response.color = new Color32(0, 0, 0, 255);
+                response.color = new Color32(0, 0, 0, 255); //Black
             }
             if (gameObject.name == "Response 2")
             {
-                response.color = new Color32(128, 128, 128, 255);
+                response.color = new Color32(128, 128, 128, 255); //Grey
             }
         }
 
@@ -38,11 +38,11 @@ public class ResponseHighlight : MonoBehaviour
             //Debug.Log("Right Response");
             if (gameObject.name == "Response 1")
             {
-                response.color = new Color32(128, 128, 128, 255);
+                response.color = new Color32(128, 128, 128, 255); //Grey
             }
             if (gameObject.name == "Response 2")
             {
-                response.color = new Color32(0, 0, 0, 255);
+                response.color = new Color32(0, 0, 0, 255); //Black
             }
         }
     }
