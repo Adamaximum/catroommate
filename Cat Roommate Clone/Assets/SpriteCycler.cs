@@ -6,10 +6,15 @@ public class SpriteCycler : MonoBehaviour
 {
     public SpriteRenderer[] sr;
 
+    public Animation anim;
+
     // Start is called before the first frame update
     void Start()
     {
         sr = gameObject.GetComponents<SpriteRenderer>();
+
+        anim = gameObject.GetComponent<Animation>();
+        anim.Stop();
     }
 
     // Update is called once per frame

@@ -563,16 +563,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _selectState: 0
   _questionsList:
-  - '"I have a fully furnished 2 bedroom & I just need a roommate! Just a few questions
-    tho..."'
-  - '"Are you a night owl or \nan early riser?"'
+  - '"I have a fully furnished 2 bedroom & I just need a roommate!          Just a
+    few questions tho..."'
+  - '"Are you a night owl or                    an early riser?"'
   - '"What do you like on yr pizza?"'
   - '"Are you allergic to cats?"'
   - '"How do you feel about naps?"'
   - '"Don''t you hate birds?"'
   - '"Can I have some belly rubs?"'
-  - '"Let''s be roommates!"'
-  - '"I can''t live with you..."'
   _leftAnswerList:
   - Great!
   - Night Owl
@@ -581,7 +579,6 @@ MonoBehaviour:
   - Love 'em
   - The most
   - YEP
-  - 
   _rightAnswerList:
   - Okay...
   - Early Riser
@@ -590,7 +587,6 @@ MonoBehaviour:
   - Hate 'em
   - Not rly
   - IDK
-  - 
   _question: 0
   _catPoints: 0
   questionAsked: {fileID: 0}

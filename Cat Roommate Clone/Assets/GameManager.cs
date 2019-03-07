@@ -67,18 +67,24 @@ public class GameManager : MonoBehaviour
         //        timer = 1;
         //    }
         //}
-        
-            ChangeText();
 
-        if(_question == 7)
+        if (_question <= 6)
+        {
+            ChangeText();
+        }
+        else if(_question == 7)
         {
             if (_catPoints > 0) //Win
             {
-                _question = 7;
+                questionAsked.text = "Let's be roommates!";
+                responseLeft.text = "";
+                responseRight.text = "";
             }
             else if (_catPoints < 0) //Lose
             {
-                _question = 8;
+                questionAsked.text = "I can't live with you...";
+                responseLeft.text = "";
+                responseRight.text = "";
             }
         }
         
