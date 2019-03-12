@@ -167,8 +167,6 @@ public class GameManager : MonoBehaviour
                 cycler.sr.sprite = catSprites[11];
 
                 Debug.Log("Right Answer, SelectState = " + _selectState + ", Question = " + _question);
-
-                
             }
             else if (_selectState == true) //Hate 'em (Bad)
             {
@@ -176,8 +174,6 @@ public class GameManager : MonoBehaviour
                 cycler.sr.sprite = catSprites[2];
 
                 Debug.Log("Wrong Answer, SelectState = " + _selectState + ", Question = " + _question);
-
-                
             }
         }
         else if (_question == 5)
@@ -188,8 +184,6 @@ public class GameManager : MonoBehaviour
                 cycler.sr.sprite = catSprites[4];
 
                 Debug.Log("Right Answer, SelectState = " + _selectState + ", Question = " + _question);
-
-                
             }
             else if (_selectState == true) //Not rly (Bad)
             {
@@ -197,8 +191,6 @@ public class GameManager : MonoBehaviour
                 cycler.sr.sprite = catSprites[10];
 
                 Debug.Log("Wrong Answer, SelectState = " + _selectState + ", Question = " + _question);
-
-                
             }
         }
         else if (_question == 6)
