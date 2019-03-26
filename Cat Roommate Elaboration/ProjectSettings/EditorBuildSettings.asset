@@ -5,7 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    guid: 578fe9b1b02290a4fa3bed0a3c054805
+  - enabled: 1
+    path: Assets/Scenes/YouHomeless.unity
+    guid: b30c6b69b3b1b5a45b13f869e62344ee
+  - enabled: 1
+    path: Assets/Scenes/CatFight.unity
+    guid: 797332a56d019db4bbd5558329adaee1
+  - enabled: 1
+    path: Assets/Scenes/CatHomeless.unity
+    guid: dd9995a88cf82574abb207d995359b73
+  - enabled: 1
+    path: Assets/Scenes/WorkedItOut.unity
+    guid: d7f1788b718e995459a02e5502064ce4
   m_configObjects: {}
