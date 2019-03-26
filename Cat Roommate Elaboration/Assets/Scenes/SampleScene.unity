@@ -309,7 +309,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 199, y: -290}
+  m_AnchoredPosition: {x: 101, y: -290}
   m_SizeDelta: {x: -591.4, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &444133394
@@ -361,8 +361,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 65
-  m_fontSizeBase: 65
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -577,30 +577,32 @@ MonoBehaviour:
   - {fileID: 21300022, guid: 24e34a7c52baeae469db5fd49a670f11, type: 3}
   _selectState: 0
   _questionsList:
-  - '"I have a fully furnished 2 bedroom & I just need a roommate!          Just a
-    few questions tho..."'
-  - '"Are you a night owl or                    an early riser?"'
-  - '"What do you like on yr pizza?"'
-  - '"Are you allergic to cats?"'
-  - '"How do you feel about naps?"'
-  - '"Don''t you hate birds?"'
-  - '"Can I have some belly rubs?"'
+  - '"We''ve been roommates for 3 months now; how do you feel about it so far?"'
+  - '"Sure! As long as it''s reasonable for a cat..."'
+  - '"I''ll make note of that...anything else?"'
+  - '"Hmm...I get the feeling there''s more."'
+  - '"Alright, now it''s my turn."'
+  - '"Can you start buying Premium Cat Food instead of the cheap stuff?"'
+  - '"Can you ask our neighbor to keep their dog away?"'
+  - '"Could you promise to make some more time to play with me?"'
   _leftAnswerList:
-  - Great!
-  - Night Owl
-  - Veggies
-  - A little
-  - Love 'em
-  - The most
-  - YEP
+  - It's good.
+  - Don't scratch the sofa
+  - Pick up the fur you shed
+  - Stop leaving hairballs everywhere
+  - Sure thing!
+  - Of course!
+  - Will do!
+  - I promise!
   _rightAnswerList:
-  - Okay...
-  - Early Riser
-  - Anchovies
-  - Nope
-  - Hate 'em
-  - Not rly
-  - IDK
+  - Some things could change...
+  - Change your litterbox yourself
+  - No more dead mice in the apartment
+  - Don't sit on my keyboard when I'm trying to work
+  - Ugh...
+  - No, too expensive
+  - Ask them yourself
+  - No, I'm too busy
   _question: 0
   _catPoints: 0
   questionAsked: {fileID: 0}
@@ -893,13 +895,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7b572366de62ab4dbab61ce0ea63594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 175063962}
-  textStuff:
-  - I was just kidding about the C4 :)
-  - Don't worry, this car can survive the water
-  - Boo-doo, boo-doo, banana bus
-  - I was always told I would be in the toilet one day
-  - Dude, when I was training with the League of Shadows, there was no yield sign!
 --- !u!1 &1424711734
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,7 +930,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -179.6, y: -290}
+  m_AnchoredPosition: {x: -262, y: -290}
   m_SizeDelta: {x: -591.4, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1424711736
@@ -987,8 +982,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 65
-  m_fontSizeBase: 65
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

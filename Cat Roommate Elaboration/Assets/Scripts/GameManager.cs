@@ -58,15 +58,15 @@ public class GameManager : MonoBehaviour
             Application.Quit();
         }
 
-        if (_question <= 6)
+        if (_question <= 7)
         {
             ChangeText();
         }
-        else if(_question == 7)
+        else if(_question == 8)
         {
             if (_catPoints > 0) //Win
             {
-                questionAsked.text = "Let's be roommates!";
+                questionAsked.text = "I think that's it! I'm glad we make such great roommates!";
                 responseLeft.text = "";
                 responseRight.text = "";
 
@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
             }
             else if (_catPoints < 0) //Lose
             {
-                questionAsked.text = "I can't live with you...";
+                questionAsked.text = "Sorry, but I don't think this arrangement will work. You should move out.";
                 responseLeft.text = "";
                 responseRight.text = "";
 
@@ -94,118 +94,104 @@ public class GameManager : MonoBehaviour
     {
         if (_question == 0)
         {
-            if(_selectState == false) //Great! (Good)
+            if(_selectState == false) //End Game
             {
-                _catPoints++;
-                cycler.sr.sprite = catSprites[3];
-
-                Debug.Log("Right Answer, SelectState = " + _selectState + ", Question = " + _question);
+                
             }
-            else if (_selectState == true) //Okay... (Bad)
+            else if (_selectState == true) //Begin Game
             {
-                _catPoints--;
-
-                Debug.Log("Wrong Answer, SelectState = " + _selectState + ", Question = " + _question);
+                cycler.sr.sprite = catSprites[6];
             }
         }
         else if (_question == 1)
         {
-            if (_selectState == false) //Night Owl (Good)
+            if (_selectState == false) //Sofa (Good)
             {
                 _catPoints++;
-                cycler.sr.sprite = catSprites[2];
-
-                Debug.Log("Right Answer, SelectState = " + _selectState + ", Question = " + _question);
+                cycler.sr.sprite = catSprites[0];
             }
-            else if (_selectState == true) //Early Riser (Bad)
+            else if (_selectState == true) //Litterbox (Bad)
             {
                 _catPoints--;
-                cycler.sr.sprite = catSprites[0];
-
-                Debug.Log("Wrong Answer, SelectState = " + _selectState + ", Question = " + _question);
+                cycler.sr.sprite = catSprites[5];
             }
         }
         else if (_question == 2)
         {
-            if (_selectState == false) //Veggies (Bad)
+            if (_selectState == false) //Fur Shed (Bad)
             {
                 _catPoints--;
                 cycler.sr.sprite = catSprites[8];
-
-                Debug.Log("Wrong Answer, SelectState = " + _selectState + ", Question = " + _question);
             }
-            else if (_selectState == true) //Anchovies (Good)
+            else if (_selectState == true) //Dead Mice (Good)
             {
                 _catPoints++;
-                cycler.sr.sprite = catSprites[2];
-
-                Debug.Log("Right Answer, SelectState = " + _selectState + ", Question = " + _question);
+                cycler.sr.sprite = catSprites[1];
             }
         }
         else if (_question == 3)
         {
-            if (_selectState == false) //A little (Bad)
+            if (_selectState == false) //Hairballs (Bad)
             {
                 _catPoints--;
-                cycler.sr.sprite = catSprites[9];
-
-                Debug.Log("Wrong Answer, SelectState = " + _selectState + ", Question = " + _question);
+                cycler.sr.sprite = catSprites[10];
             }
-            else if (_selectState == true) //Nope (Good)
+            else if (_selectState == true) //Keyboard (Good)
             {
                 _catPoints++;
-                cycler.sr.sprite = catSprites[5];
-
-                Debug.Log("Right Answer, SelectState = " + _selectState + ", Question = " + _question);
+                cycler.sr.sprite = catSprites[3];
             }
         }
         else if (_question == 4)
         {
-            if (_selectState == false) //Love 'em (Good)
+            if (_selectState == false) //Sure! (Good)
             {
                 _catPoints++;
                 cycler.sr.sprite = catSprites[11];
-
-                Debug.Log("Right Answer, SelectState = " + _selectState + ", Question = " + _question);
             }
-            else if (_selectState == true) //Hate 'em (Bad)
+            else if (_selectState == true) //Ugh... (Bad)
             {
                 _catPoints--;
-                cycler.sr.sprite = catSprites[2];
-
-                Debug.Log("Wrong Answer, SelectState = " + _selectState + ", Question = " + _question);
+                cycler.sr.sprite = catSprites[7];
             }
         }
         else if (_question == 5)
         {
-            if (_selectState == false) //The most (Good)
+            if (_selectState == false) //Of course! (Good)
             {
                 _catPoints++;
-                cycler.sr.sprite = catSprites[4];
-
-                Debug.Log("Right Answer, SelectState = " + _selectState + ", Question = " + _question);
+                cycler.sr.sprite = catSprites[2];
             }
-            else if (_selectState == true) //Not rly (Bad)
+            else if (_selectState == true) //Too expensive (Bad)
             {
                 _catPoints--;
-                cycler.sr.sprite = catSprites[10];
-
-                Debug.Log("Wrong Answer, SelectState = " + _selectState + ", Question = " + _question);
+                cycler.sr.sprite = catSprites[8];
             }
         }
         else if (_question == 6)
         {
-            if (_selectState == false) //YEP (Good)
+            if (_selectState == false) //Will do! (Good)
             {
                 _catPoints++;
-
-                Debug.Log("Right Answer, SelectState = " + _selectState + ", Question = " + _question);
+                cycler.sr.sprite = catSprites[4];
             }
-            else if (_selectState == true) //IDK (Bad)
+            else if (_selectState == true) //Ask yourself (Bad)
             {
                 _catPoints--;
-
-                Debug.Log("Wrong Answer, SelectState = " + _selectState + ", Question = " + _question);
+                cycler.sr.sprite = catSprites[9];
+            }
+        }
+        else if (_question == 7)
+        {
+            if (_selectState == false) //I promise! (Good)
+            {
+                _catPoints++;
+                cycler.sr.sprite = catSprites[1];
+            }
+            else if (_selectState == true) //Too busy (Bad)
+            {
+                _catPoints--;
+                cycler.sr.sprite = catSprites[11];
             }
         }
         _question++;
