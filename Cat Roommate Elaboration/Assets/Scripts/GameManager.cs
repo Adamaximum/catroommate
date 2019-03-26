@@ -58,29 +58,35 @@ public class GameManager : MonoBehaviour
             Application.Quit();
         }
 
-        if (_question <= 7)
+        if (_question < _questionsList.Length)
         {
             ChangeText();
         }
-        else if(_question == 8)
+
+        if (_question == 8 && _catPoints < 0)
         {
-            if (_catPoints > 0) //Win
-            {
-                questionAsked.text = "I think that's it! I'm glad we make such great roommates!";
-                responseLeft.text = "";
-                responseRight.text = "";
-
-                cycler.sr.sprite = catSprites[1];
-            }
-            else if (_catPoints < 0) //Lose
-            {
-                questionAsked.text = "Sorry, but I don't think this arrangement will work. You should move out.";
-                responseLeft.text = "";
-                responseRight.text = "";
-
-                cycler.sr.sprite = catSprites[7];
-            }
+            _question = 9;
         }
+
+        //if (_question == 8)
+        //{
+        //    if (_catPoints > 0) //Win
+        //    {
+        //        questionAsked.text = "I think that's it! I'm glad we make such great roommates!";
+        //        responseLeft.text = "Play Again";
+        //        responseRight.text = "Quit";
+
+        //        cycler.sr.sprite = catSprites[1];
+        //    }
+        //    else if (_catPoints < 0) //Lose
+        //    {
+        //        questionAsked.text = "Sorry, but I don't think this arrangement will work. You should move out.";
+        //        responseLeft.text = "Fine...";
+        //        responseRight.text = "Fight me!";
+
+        //        cycler.sr.sprite = catSprites[7];
+        //    }
+        //}
     }
 
     void ChangeText()
@@ -92,11 +98,14 @@ public class GameManager : MonoBehaviour
 
     void QuestionAdvance()
     {
+        
+
         if (_question == 0)
         {
             if(_selectState == false) //End Game
             {
-                
+                _question = 10;
+                cycler.sr.sprite = catSprites[2];
             }
             else if (_selectState == true) //Begin Game
             {
@@ -194,6 +203,43 @@ public class GameManager : MonoBehaviour
                 cycler.sr.sprite = catSprites[11];
             }
         }
-        _question++;
+        else if (_question == 8)
+        {
+            if (_selectState == false) //Play Again
+            {
+                SceneManager.LoadScene("SampleScene");
+            }
+            else if (_selectState == true) //Quit
+            {
+                Application.Quit();
+            }
+        }
+        else if (_question == 9)
+        {
+            if (_selectState == false) //Move out
+            {
+                
+            }
+            else if (_selectState == true) //Fight
+            {
+                
+            }
+        }
+        else if (_question == 10)
+        {
+            if (_selectState == false) //Move out
+            {
+                SceneManager.LoadScene("SampleScene");
+            }
+            else if (_selectState == true) //Fight
+            {
+                Application.Quit();
+            }
+        }
+
+        if (_question < 8)
+        {
+            _question++;
+        }
     }
 }
